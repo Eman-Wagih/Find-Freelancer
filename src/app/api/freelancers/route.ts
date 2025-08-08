@@ -1,12 +1,6 @@
 import { NextResponse } from 'next/server';
+import db from '../../../../db.json'; 
 
 export async function GET() {
-  try {
-    const res = await fetch('http://localhost:4000/freelancers');
-    const freelancers = await res.json();
-
-    return NextResponse.json(freelancers);
-  } catch (error) {
-    console.error(error)
-  }
+  return NextResponse.json(db.freelancers);
 }

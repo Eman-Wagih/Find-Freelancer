@@ -11,13 +11,19 @@ export default function Home() {
   const { filters } = useFreelancerFilters();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch('/api/freelancers');
+  const fetchData = async () => {
+    try {
+      const res = await fetch('/api/freelancers');    
       const data = await res.json();
       setFreelancers(data);
-    };
-    fetchData();
-  }, []);
+    } catch (err) {
+      console.error('Failed to fetch freelancers:', err);
+    }
+  };
+  
+  fetchData();
+}, []);
+
 
   const filteredFreelancers = freelancers
   .filter(f => f.name.toLowerCase().includes(filters.search.toLowerCase()))
