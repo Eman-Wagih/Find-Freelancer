@@ -7,7 +7,8 @@ export type Freelancer = {
   reviewCount: number;
   price: number;
   profilePhoto: string;
+  backgroundPhoto: string;
   serviceCategory:string;
   deliveryTime: string;
-  secondaryLocation: string
+  secondaryLocation: string;
 };

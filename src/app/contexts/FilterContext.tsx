@@ -7,10 +7,10 @@ type SortOption = "mostRated" | "lowestRated" | "highestPrice" | "lowestPrice";
 export interface FilterState {
   search: string;
   serviceCategory: string;
-  sellerLevel: string;         // ✅ add this
+  sellerLevel: string;         
   budget: string;
-  deliveryTime: string;        // ✅ add this
-  secondaryLocation: string;   // ✅ add this
+  deliveryTime: string;        
+  secondaryLocation: string;   
   sort: string;
 }
 

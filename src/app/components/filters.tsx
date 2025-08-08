@@ -10,15 +10,20 @@ export default function Filters() {
   };
 
   return (
-    <div className="grid md:grid-cols-3 gap-4 p-4 bg-gray-50 rounded-md shadow">
-      <select name="serviceCategory" value={filters.serviceCategory} onChange={handleChange} className="border p-2 rounded">
-        <option value="">Service Category</option>
-        <option value="Photographer">Photographer</option>
-        <option value="Designer">Designer</option>
-        <option value="Developer">Developer</option>
+    <div className="flex flex-col">
+      <div className='grid grid-cols-4 gap-3 mb-3'>
+      <select
+        name="serviceCategory"
+        value={filters.serviceCategory}
+        onChange={handleChange}
+        className="border border-gray-300 p-2 rounded"
+      >
+        <option value="">All categories</option>
+        <option value="Photography">Photography</option>
+        <option value="Development">Development</option>
+        <option value="Writing">Writing</option>
       </select>
-
-      <select name="sellerLevel" value={filters.sellerLevel} onChange={handleChange} className="border p-2 rounded">
+      <select name="sellerLevel" value={filters.sellerLevel} onChange={handleChange} className="border p-2 rounded border-gray-300">
         <option value="">Seller Level</option>
         <option value="Top Rated">Top Rated</option>
         <option value="Level 2">Level 2</option>
@@ -31,7 +36,7 @@ export default function Filters() {
         value={filters.budget}
         placeholder="Max Budget"
         onChange={handleChange}
-        className="border p-2 rounded"
+        className="border p-2 rounded border-gray-300"
       />
 
       <input
@@ -40,25 +45,27 @@ export default function Filters() {
         value={filters.deliveryTime}
         placeholder="Delivery Time (e.g., 2 days)"
         onChange={handleChange}
-        className="border p-2 rounded"
+        className="border p-2 rounded border-gray-300"
       />
-
+</div>
+<div className='flex justify-between'> 
       <input
         type="text"
         name="secondaryLocation"
         value={filters.secondaryLocation}
         placeholder="Secondary Location"
         onChange={handleChange}
-        className="border p-2 rounded"
+        className="border p-2 rounded border-gray-300"
       />
 
-      <select name="sort" value={filters.sort} onChange={handleChange} className="border p-2 rounded">
+      <select name="sort" value={filters.sort} onChange={handleChange} className="border p-2 rounded border-gray-300">
         <option value="">Sort By</option>
         <option value="mostRated">Most Rated</option>
         <option value="lowestRated">Lowest Rated</option>
         <option value="highestPrice">Highest Price</option>
         <option value="lowestPrice">Lowest Price</option>
       </select>
+      </div>
     </div>
   );
 }
